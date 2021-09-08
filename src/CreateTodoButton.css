@@ -1,0 +1,24 @@
+button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	width: 60px;
+	height: 60px;
+	padding: 10px;
+	border: none;
+	margin-left: auto;
+	border-radius: 50%;
+	font-size: 3rem;
+	font-weight: 300;
+	color: #e3e3e3;
+	background: rgb(235, 7, 253);
+	box-shadow: 0 0 10px rgb(235, 7, 253), 0 0 40px rgb(235, 7, 253);
+	transition: 0.2s;
+}
+
+button:hover {
+	box-shadow: 0 0 10px rgb(235, 7, 253), 0 0 40px rgb(235, 7, 253),
+		0 0 80px rgb(235, 7, 253);
+	filter: brightness(2);
+}

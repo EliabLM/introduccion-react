@@ -1,10 +1,5 @@
 import React from 'react';
-import { TodoCounter } from '../TodoCounter/TodoCounter';
-import { TodoSearch } from '../TodoSearch/TodoSearch';
-import { TodoList } from '../TodoList/TodoList';
-import { TodoItem } from '../TodoItem/TodoItem';
-import { CreateTodoButton } from '../CreateTodoButton/CreateTodoButton';
-import './App.css';
+import { AppUI } from './AppUI';
 
 // const defaultTodos = [
 // 	{ text: 'Cortar cebolla', completed: false },
@@ -72,26 +67,20 @@ function App() {
 		saveTodos(newTodos);
 	};
 
+	React.useEffect(() => {
+		console.log('use effect');
+	});
+
 	return (
-		<div className="container">
-			<TodoCounter total={totalTodos} completed={completedTodos} />
-
-			<TodoSearch searchValue={searchValue} setSearchValue={setSearchValue} />
-
-			<TodoList>
-				{searchedTodos.map((todo) => (
-					<TodoItem
-						key={todo.text}
-						text={todo.text}
-						completed={todo.completed}
-						onComplete={() => completeTodo(todo.text)}
-						onDelete={() => deleteTodo(todo.text)}
-					/>
-				))}
-			</TodoList>
-
-			<CreateTodoButton />
-		</div>
+		<AppUI
+			totalTodos={totalTodos}
+			completedTodos={completedTodos}
+			searchValue={searchValue}
+			setSearchValue={setSearchValue}
+			searchedTodos={searchedTodos}
+			completeTodo={completeTodo}
+			deleteTodo={deleteTodo}
+		/>
 	);
 }
 

@@ -1,4 +1,5 @@
-button {
+.CreateTodoButton {
+	position: relative;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -15,9 +16,10 @@ button {
 	background: rgb(235, 7, 253);
 	box-shadow: 0 0 10px rgb(235, 7, 253), 0 0 40px rgb(235, 7, 253);
 	transition: 0.2s;
+	z-index: 1;
 }
 
-button:hover {
+.CreateTodoButton:hover {
 	box-shadow: 0 0 10px rgb(235, 7, 253), 0 0 40px rgb(235, 7, 253),
 		0 0 80px rgb(235, 7, 253);
 	filter: brightness(2);
